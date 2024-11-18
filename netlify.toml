@@ -1,0 +1,13 @@
+[build]
+  base = "/"
+  publish = "dist"
+  command = "npm run build"  # Or "yarn build" if you are using yarn
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[plugins]]
+  package = "@netlify/plugin-react"
