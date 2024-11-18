@@ -19,12 +19,12 @@ const CategorySelector = ({ categories, onSelectCategory }) => {
       <div className="space-y-4">
         {categories.map((category, index) => (
           <button
-            key={category}
+            key={category.id} // Use a unique id for the key
             ref={(el) => (buttonRefs.current[index] = el)}
             className="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-md hover:scale-105 transition-transform"
-            onClick={() => onSelectCategory(category)}
+            onClick={() => onSelectCategory(category.id)} // Pass the category id or object as needed
           >
-            {category}
+            {category.name} {/* Render the category name */}
           </button>
         ))}
       </div>
